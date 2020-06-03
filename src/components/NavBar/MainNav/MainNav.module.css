@@ -1,0 +1,28 @@
+/* Admin menuitemin tyylit */
+.Admin {
+  font-weight: 500;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.Admin:active {
+  color: #fb7963;
+}
+
+.Admin:hover {
+  color: #d24b47;
+}
+
+/* MenuItem:eiden tyylit */
+.MenuItem {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.MenuItem:active {
+  color: #fb7963;
+}
+
+.MenuItem:hover {
+  color: #d24b47;
+}

@@ -1,0 +1,10 @@
+.NavBar {
+  background: linear-gradient(90deg, #5b2055, #2f163b);
+}
+
+/* Logon fontti */
+.LogoTeksti {
+  font-family: 'Sonsie One', cursive;
+  font-size: 60px;
+  color: #fefefe;
+}
