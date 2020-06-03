@@ -14,8 +14,9 @@ Full Stack -kurssin projektityönä Reactilla koodattu nettikasino.
 ```npm start ```
 
 
-## Appin layout
-[tähän tulee kuva Photoshopilla tehdystä layoutista]
+## Appin etusivun design
+![Etusivun design](https://github.com/januzgi/React-Voitto-Kasino/blob/janis/leiskat/Kasino_Etusivu_design.jpg)
+
 
 
 ## Arkkitehtuuri
