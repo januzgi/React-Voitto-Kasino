@@ -11,7 +11,10 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # DS storet
 *.DS_Store
+<<<<<<< HEAD
 .DS_Store
+=======
+>>>>>>> 325498cbfc296581180e3b29e883ddd4a9744e98
 
 # Runtime data
 pids
