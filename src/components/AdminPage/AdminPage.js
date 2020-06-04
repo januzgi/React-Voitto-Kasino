@@ -33,6 +33,6 @@ export default class AdminPage extends React.Component {
   };
 
   render() {
-    return <div className={classes.AdminPage}>adminsivut</div>;
+    return <div className={classes.adminPage}>adminsivut</div>;
   }
 }

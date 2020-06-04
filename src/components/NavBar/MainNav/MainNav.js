@@ -1,60 +1,120 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { List } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
+import { List, Image } from 'semantic-ui-react';
 import classes from './MainNav.module.css';
+// import { ReactComponent as addBalanceIcon } from '../../../ikonit/lisää.svg';
+import addBalanceIcon from '../../../ikonit/lisää.svg';
 
 // MainNav on oma komponenttinsa, sisältää NavBar:in päävalikon.
 // Kirjautuneen käyttäjän mukaan (admin/tavallinen) näytetään eri MainNav
 const MainNav = (props) => {
-  //   TODO: dynaamisempi JSX:n luonti esim. objektin pohjalta
-
   return (
-    <div>
+    <div className={classes.mainNav}>
       {props.loggedIn && props.isAdmin ? (
-        <List>
+        <List horizontal>
+          {/* Adminin näkymä */}
           <List.Item>
-            <Link to='/admin' className={classes.Admin}>
-              Admin
-            </Link>
+            <NavLink
+              exact={true}
+              to='/'
+              activeClassName='active'
+              className={classes.menuItem}
+            >
+              Pelit
+            </NavLink>
           </List.Item>
           <List.Item>
-            <Link to='/kirjauduulos' className={classes.MenuItem}>
+            <NavLink
+              to='/admin'
+              activeClassName='active'
+              className={`${classes.admin} ${classes.menuItem}`}
+            >
+              Admin
+            </NavLink>
+          </List.Item>
+          <List.Item>
+            <NavLink
+              to='/kirjauduulos'
+              activeClassName='active'
+              className={classes.menuItem}
+            >
               Kirjaudu ulos
-            </Link>
+            </NavLink>
           </List.Item>
         </List>
       ) : (
-        <List>
+        <List horizontal className={classes.balanceList}>
+          {/* Tavallisen käyttäjän näkymä */}
           <List.Item>
-            <Link to='/' className={classes.MenuItem}>
+            <NavLink
+              exact={true}
+              to='/'
+              activeClassName='active'
+              className={classes.menuItem}
+            >
               Pelit
-            </Link>
+            </NavLink>
           </List.Item>
-          {/* Jos käyttäjä on kirjautunut sisään */}
+          {/* Jos käyttäjä on kirjautunut sisään, näytä "Saldo" */}
           {props.loggedIn ? (
-            <List.Item>
-              <Link to='/saldo' className={classes.MenuItem}>
-                Saldo
-              </Link>
+            <List.Item className={classes.balanceItem}>
+              <Image
+                src={addBalanceIcon}
+                alt='Add balance'
+                className={classes.addBalanceIcon}
+                onClick={() => props.addBalance()}
+              />
+              <List.Content className={classes.balanceContent}>
+                <NavLink
+                  to='/saldo'
+                  activeClassName='active'
+                  className={classes.menuItemBalance}
+                >
+                  Saldo:&nbsp;
+                </NavLink>
+                <NavLink
+                  to='/saldo'
+                  activeClassName='active'
+                  className={`${classes.balanceAmount} ${classes.balanceItem}`}
+                >
+                  {props.balanceValue.toFixed(2)}
+                  {props.currency}
+                </NavLink>
+              </List.Content>
             </List.Item>
           ) : null}
-          <List.Item>
-            <Link to='/luotunnus' className={classes.MenuItem}>
-              Luo tunnus
-            </Link>
-          </List.Item>
-          {/* Jos käyttäjä on kirjautunut sisään */}
+          {/* Jos käyttäjä ei ole kirjautunut sisään, näytä "Luo tunnus" */}
+          {!props.loggedIn ? (
+            <List.Item>
+              <NavLink
+                to='/luotunnus'
+                activeClassName='active'
+                className={classes.menuItem}
+              >
+                Luo tunnus
+              </NavLink>
+            </List.Item>
+          ) : null}
+          {/* Jos käyttäjä on kirjautunut sisään, näytä "Kirjaudu ulos" */}
           {props.loggedIn ? (
             <List.Item>
-              <Link to='/kirjauduulos' className={classes.MenuItem}>
+              <NavLink
+                to='/kirjauduulos'
+                activeClassName='active'
+                className={classes.menuItem}
+              >
                 Kirjaudu ulos
-              </Link>
+              </NavLink>
             </List.Item>
           ) : (
             <List.Item>
-              <Link to='/kirjaudu' className={classes.MenuItem}>
+              <NavLink
+                to='/kirjaudu'
+                activeClassName='active'
+                className={classes.menuItem}
+              >
                 Kirjaudu
-              </Link>
+              </NavLink>
             </List.Item>
           )}
         </List>

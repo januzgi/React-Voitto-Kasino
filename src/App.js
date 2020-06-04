@@ -9,7 +9,7 @@ import ChatBox from './components/ChatBox/ChatBox';
 import Balance from './components/Balance/Balance';
 import Login from './components/Login/Login';
 import Logout from './components/Logout/Logout';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { Switch, Route, withRouter, useHistory } from 'react-router-dom';
 import classes from './App.module.css';
 
 class App extends React.Component {
@@ -18,8 +18,10 @@ class App extends React.Component {
     this.state = {
       list: [],
       id: 100,
-      isAdmin: true,
+      isAdmin: false,
       loggedIn: true,
+      balanceValue: 0.0,
+      currency: '€',
     };
   }
 
@@ -56,10 +58,21 @@ class App extends React.Component {
     });
   };
 
+  // Lisää saldoa
+  addBalance = () => {
+    alert('Lisätään saldoa.');
+  };
+
   render() {
     return (
       <div>
-        <NavBar isAdmin={this.state.isAdmin} loggedIn={this.state.loggedIn} />
+        <NavBar
+          isAdmin={this.state.isAdmin}
+          loggedIn={this.state.loggedIn}
+          balanceValue={this.state.balanceValue}
+          currency={this.state.currency}
+          addBalance={this.addBalance}
+        />
         <hr />
         <Switch>
           <Route

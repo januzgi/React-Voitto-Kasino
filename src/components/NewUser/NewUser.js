@@ -40,7 +40,9 @@ export default class NewUser extends React.Component {
     };
     return (
       <div style={style}>
-        <div className={classes.USP}>Miksi kannattaa pelata meillä</div>
+        <div className={classes.uniqueSellingPoints}>
+          Miksi kannattaa pelata meillä
+        </div>
         <h2>Luo tunnus</h2>
         <Form onSubmit={this.onSubmit}>
           <Form.Field>

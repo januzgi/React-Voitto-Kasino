@@ -1,10 +1,23 @@
-.NavBar {
+/* Koko palkki */
+.navBar {
   background: linear-gradient(90deg, #5b2055, #2f163b);
 }
 
 /* Logon fontti */
-.LogoTeksti {
+.logoTeksti {
   font-family: 'Sonsie One', cursive;
   font-size: 60px;
   color: #fefefe;
+}
+
+/* Wrapper sisällölle, jotta pysyy max 1200px leveenä */
+.wrapper {
+  width: 97%;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  float: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

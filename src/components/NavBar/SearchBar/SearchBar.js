@@ -1,7 +1,8 @@
 import React from 'react';
+import classes from './SearchBar.module.css';
 
 const SearchBar = () => {
-  return <div>Hakukenttä</div>;
+  return <div className={classes.searchBar}></div>;
 };
 
 export default SearchBar;

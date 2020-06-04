@@ -1,28 +1,64 @@
 /* Admin menuitemin tyylit */
-.Admin {
-  font-weight: 500;
-  font-size: 20px;
+.admin {
   font-style: italic;
 }
 
-.Admin:active {
-  color: #fb7963;
-}
-
-.Admin:hover {
-  color: #d24b47;
+/* Koko palikan margin */
+.mainNav {
+  margin-top: 40px;
 }
 
 /* MenuItem:eiden tyylit */
-.MenuItem {
+.menuItem {
+  font-weight: 500;
+  font-size: 20px;
+  margin-left: 80px;
+}
+
+/* saldon tyylit */
+.balanceAmount {
+  color: #3e9c35;
   font-weight: 500;
   font-size: 20px;
 }
 
-.MenuItem:active {
+/* Ikonin tyylit */
+.addBalanceIcon {
+  height: 20px;
+  padding-right: 10px;
+  padding-left: 80px;
+  transition: transform 0.2s; /* Animation */
+}
+
+.addBalanceIcon:hover {
+  transform: scale(1.05);
+}
+
+/* Menun itemit samaan tasoon tekstin osalta */
+.balanceItem {
+  vertical-align: top;
+}
+
+/* Ylimääräinen padding pois */
+.balanceContent {
+  padding: 0 !important;
+}
+
+/* Saldon tyyli ikonin vuoksi erilainen */
+.menuItemBalance {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.balanceItem:hover {
+  color: #d24b47;
+}
+
+/* Linkkien tyylit */
+a:active {
   color: #fb7963;
 }
 
-.MenuItem:hover {
+.menuItem:hover {
   color: #d24b47;
 }

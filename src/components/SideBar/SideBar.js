@@ -8,7 +8,7 @@ import classes from './SideBar.module.css';
 export default class SideBar extends React.Component {
   render() {
     return (
-      <div className={classes.SideBar}>
+      <div className={classes.sideBar}>
         <HomeNav></HomeNav>
         <GameNav></GameNav>
         <Ad></Ad>

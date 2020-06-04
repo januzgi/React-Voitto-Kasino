@@ -3,7 +3,7 @@ import classes from './OrganizerTab.module.css';
 
 const OrganizerTab = () => {
   return (
-    <div className={classes.OrganizerTab}>
+    <div className={classes.organizerTab}>
       <h2>Järjestä pelit</h2>
       <ul>
         <li>Voittoprosentti %</li>

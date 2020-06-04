@@ -1,3 +1,16 @@
+/* Käytä border-box:ia kaikkialla, niin ei tarvitse paddingeja laskee leveyksiin */
+html {
+  box-sizing: border-box;
+}
+
+/* Periytä border-box kaikkiin elementteihin
+ */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -5,6 +18,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fefefe;
+  line-height: 0;
 }
 
 /* Aseta bodyn taustaksi kuva ja sille 50% näkyvyys (opacity) */
@@ -18,4 +32,17 @@ body:after {
   right: 0;
   position: absolute;
   z-index: -1;
+}
+
+/* Linkkien värit */
+.active {
+  color: #fb7963;
+}
+
+a:hover {
+  color: #d24b47;
+}
+
+a {
+  color: #fefefe;
 }

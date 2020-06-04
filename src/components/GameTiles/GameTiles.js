@@ -4,7 +4,8 @@ import classes from './GameTiles.module.css';
 
 const GameTiles = () => {
   return (
-    <div className={classes.GameTiles}>
+    <div className={classes.gameTiles}>
+      <GameTile />
       <GameTile />
       <GameTile />
       <GameTile />
