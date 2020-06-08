@@ -5,13 +5,10 @@ Full Stack -kurssin projektityönä Reactilla koodattu nettikasino.
 1. Kloonaa repo:
 ```git clone https://github.com/januzgi/React-Voitto-Kasino.git```
 
-1. Mene kansioon ```voitto-kasino```
+1. Mene alikansioon ```cd React-Voitto-Kasino/```
 
-3. Asenna appi:
-```npm install ```
-
-4. Aja appi:
-```npm start ```
+3. Asenna ja aja appi:
+```npm install; npm start ```
 
 
 ## Appin etusivun design
@@ -22,15 +19,17 @@ Full Stack -kurssin projektityönä Reactilla koodattu nettikasino.
 ## Arkkitehtuuri
 * MongoDB Atlas tietokantana
 * React
+* React Router
 * Semantic UI React
+* CSS moduulit
 
 
 ## Ominaisuudet
 **MVP**
 * 3 sivun SPA: 
-	* Etusivu
-	* Luo tunnus -näkymä
-	* Admin -näkymä
+	* Etusivu (design kuten suunniteltu)
+	* Luo tunnus -näkymä (karvalakkidesign)
+	* Admin -näkymä (karvalakkidesign)
 * Käyttäjähallinta, yksi admin ja muut voivat luoda käyttäjätilin
 	* Vain adminille näkyy Admin -näkymä
 * Jokainen peli on oma korttinsa ja niillä on oma tyylinsä
