@@ -1,3 +1,31 @@
-.HomePage {
+/* Wrapper */
+.homePage {
   display: flex;
+  margin: 40px auto 0 auto;
+  width: 97%;
+  max-width: 1200px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Sivupalkin wrapper vasemmalla */
+.sideWrapper {
+  width: 310px;
+  background-color: #808080;
+}
+
+/* Sisältöalueen wrapper */
+.contentWrapper {
+  flex: 1 0 50%;
+  background-color: antiquewhite;
+}
+
+/* ChatBoxin wrapper */
+.chatWrapper {
+  margin-top: 40px;
+  right: 0;
+  flex-basis: 100%;
+  display: flex;
+  background-color: burlywood;
+  height: 60px;
 }

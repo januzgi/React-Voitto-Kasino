@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { List, Image } from 'semantic-ui-react';
 import classes from './MainNav.module.css';
-// import { ReactComponent as addBalanceIcon } from '../../../ikonit/lisää.svg';
+
 import addBalanceIcon from '../../../ikonit/lisää.svg';
 
 // MainNav on oma komponenttinsa, sisältää NavBar:in päävalikon.

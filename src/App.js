@@ -9,7 +9,7 @@ import ChatBox from './components/ChatBox/ChatBox';
 import Balance from './components/Balance/Balance';
 import Login from './components/Login/Login';
 import Logout from './components/Logout/Logout';
-import { Switch, Route, withRouter, useHistory } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import classes from './App.module.css';
 
 class App extends React.Component {
@@ -60,7 +60,7 @@ class App extends React.Component {
 
   // Lisää saldoa
   addBalance = () => {
-    alert('Lisätään saldoa.');
+    this.props.history.push('/saldo');
   };
 
   render() {
@@ -73,17 +73,22 @@ class App extends React.Component {
           currency={this.state.currency}
           addBalance={this.addBalance}
         />
-        <hr />
         <Switch>
           <Route
             exact
             path='/'
             render={() => (
-              <div className={classes.HomePage}>
-                <SideBar />
-                <OrganizerTab />
-                <GameTiles />
-                <ChatBox />
+              <div className={classes.homePage}>
+                <div className={classes.sideWrapper}>
+                  <SideBar admin={this.state.isAdmin} />
+                </div>
+                <div className={classes.contentWrapper}>
+                  <OrganizerTab />
+                  <GameTiles />
+                </div>
+                <div className={classes.chatWrapper}>
+                  <ChatBox />
+                </div>
               </div>
             )}
           />
@@ -93,7 +98,20 @@ class App extends React.Component {
           />
           <Route path='/saldo' render={() => <Balance />} />
           <Route path='/kirjaudu' render={() => <Login />} />
-          <Route path='/admin' render={() => <AdminPage />} />
+          {/* TODO: käyttäjä pystyy URLin syöttämällä näkemään admin sivun kirjautumatta */}
+          <Route
+            path='/admin'
+            render={() => (
+              <div className={classes.homePage}>
+                <div className={classes.sideWrapper}>
+                  <SideBar admin={this.state.isAdmin} />
+                </div>
+                <div className={classes.contentWrapper}>
+                  <AdminPage />
+                </div>
+              </div>
+            )}
+          />
           <Route path='/kirjauduulos' render={() => <Logout />} />
           {/* TODO: Logout:sta Redirect kotisivulle */}
         </Switch>

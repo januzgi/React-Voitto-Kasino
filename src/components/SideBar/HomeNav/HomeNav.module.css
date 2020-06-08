@@ -1,0 +1,21 @@
+/* Wrapper ylimmälle sivupalkille */
+.homeNav {
+  background: linear-gradient(90deg, #5b2055, #2f163b);
+  width: 310px;
+  box-shadow: 3px 3px 6px 0px #070d0d;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fefefe;
+}
+
+/* Menujen tyylit */
+
+/* Border radius pois */
+img {
+  border-radius: 0 !important;
+}
+
+/* Ikoneiden tyylit */
+.icon {
+  height: 20px;
+}

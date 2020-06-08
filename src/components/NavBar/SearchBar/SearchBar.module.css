@@ -1,12 +1,58 @@
+/* wrapper  */
 .searchBar {
   width: 400px;
   height: 50px;
   background-color: #fefefe;
   float: right;
   margin-bottom: 40px;
-  margin-top: 10px;
+  margin-top: 20px;
   border-radius: 5px;
-  -webkit-box-shadow: 3px 3px 6px 0px #070d0d;
-  -moz-box-shadow: 3px 3px 6px 0px #070d0d;
+  position: relative;
+}
+
+/* Haun syöttökenttä */
+.input {
+  border: none !important;
+  border-radius: 5px;
+  height: 50px;
+  margin: 0;
+  padding-left: 80px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 300;
   box-shadow: 3px 3px 6px 0px #070d0d;
+}
+
+/* Kun hakukenttään syötetään tietoa */
+.input:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+/* Hakukentän "Hae pelejä" tekstin väri */
+.input::placeholder {
+  color: #808080;
+}
+
+/* Hakukentän ikoni */
+.inputImg {
+  position: absolute;
+  background-color: #fb7963;
+  padding: 15px 20px;
+  border-radius: 5px 0 0 5px;
+  height: 50px;
+  transition: all 0.3s ease;
+}
+
+/* Hakukentän ikonin hover */
+.inputImg:hover {
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: scale(1.05);
+}
+
+/* Hakukentän ikonia painettaessa */
+.inputImg:active {
+  transition: opacity 0.3s, transform 0.3s;
+  transform: scale(1);
 }
