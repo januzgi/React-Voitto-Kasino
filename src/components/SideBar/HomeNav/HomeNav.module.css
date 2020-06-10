@@ -3,19 +3,39 @@
   background: linear-gradient(90deg, #5b2055, #2f163b);
   width: 310px;
   box-shadow: 3px 3px 6px 0px #070d0d;
-  font-size: 20px;
-  font-weight: 400;
-  color: #fefefe;
+  border-radius: 5px;
+  padding: 10px 0 10px 0 !important;
+  margin-bottom: 20px; /* niin HomeNav kuin GameNav komponenteille */
+}
+
+/* Linkkien tyylit */
+a:active {
+  color: #fb7963;
 }
 
 /* Menujen tyylit */
-
-/* Border radius pois */
-img {
-  border-radius: 0 !important;
+.headerText {
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  font-family: 'Prompt', sans-serif !important;
+}
+.contentItem {
+  padding-left: 20px !important;
+}
+.listItem {
+  line-height: 0 !important;
+  padding: 10px 0 10px 20px !important;
+}
+.listItem:active {
+  color: #fb7936 !important;
+  line-height: 5px;
 }
 
 /* Ikoneiden tyylit */
 .icon {
-  height: 20px;
+  width: 20px;
+}
+/* Border radius pois ikoneista */
+.listItem > img {
+  border-radius: 0 !important;
 }
