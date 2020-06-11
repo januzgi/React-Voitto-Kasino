@@ -77,8 +77,8 @@ const HomeNav = (props) => {
           <List.Item className={classes.listItem}>
             <Image src={homePageIcon} className={classes.icon} />
             <List.Content className={classes.contentItem}>
-              <List.Header></List.Header>
               <NavLink
+                exact={true}
                 to='/'
                 activeClassName='active'
                 className={classes.headerText}

@@ -1,4 +1,13 @@
 .gameTile {
-  width: 100%;
-  max-width: 270px;
+  flex: 1 1 30%;
+  height: 100%;
+  box-shadow: 3px 3px 6px 0px #070d0d;
+  border-radius: 5px;
+  font-family: 'Prompt', sans-serif !important;
+  margin-bottom: 20px;
+}
+
+.midTile {
+  margin-left: 20px;
+  margin-right: 20px;
 }

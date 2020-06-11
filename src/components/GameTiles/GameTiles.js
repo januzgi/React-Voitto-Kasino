@@ -6,13 +6,13 @@ const GameTiles = () => {
   return (
     <div className={classes.gameTiles}>
       <GameTile />
+      <GameTile midTile={'midTile'} />
       <GameTile />
       <GameTile />
+      <GameTile midTile={'midTile'} />
       <GameTile />
       <GameTile />
-      <GameTile />
-      <GameTile />
-      <GameTile />
+      <GameTile midTile={'midTile'} />
       <GameTile />
     </div>
   );
