@@ -2,7 +2,7 @@
 .homeNav {
   background: linear-gradient(90deg, #5b2055, #2f163b);
   width: 310px;
-  box-shadow: 3px 3px 6px 0px #070d0d;
+  box-shadow: 3px 0px 6px 0px rgba(7, 13, 13, 0.3);
   border-radius: 5px;
   padding: 10px 0 10px 0 !important;
   margin-bottom: 20px; /* niin HomeNav kuin GameNav komponenteille */

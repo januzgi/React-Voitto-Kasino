@@ -14,8 +14,8 @@ export default class SideBar extends React.Component {
         {this.props.admin ? null : (
           <Fragment>
             <GameNav></GameNav>
-            <Ad></Ad>
-            <Ad></Ad>
+            <Ad adName={'mainos_1'}></Ad>
+            <Ad adName={'mainos_2'}></Ad>
           </Fragment>
         )}
       </div>

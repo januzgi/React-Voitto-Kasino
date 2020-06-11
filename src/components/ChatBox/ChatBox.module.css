@@ -1,3 +1,39 @@
 .chatBox {
-  color: #070d0d;
+  border-radius: 5px 5px 0 0;
+  background-color: #2f163b;
+  width: 400px;
+  transition: transform 0.3s cubic-bezier(0.65, 0, 0.35, 1) !important;
+  box-shadow: inset 0px 3px 6px rgba(254, 254, 254, 0.3);
+  right: 0;
+  bottom: 0;
+  margin-top: 20px;
+  position: relative;
+}
+.chatBox:hover {
+  transform: scale(1.025);
+  cursor: pointer;
+}
+
+/* Menujen tyylit */
+.headerText {
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  font-family: 'Prompt', sans-serif !important;
+  color: #fefefe !important;
+}
+.contentItem {
+  padding-left: 20px !important;
+}
+.listItem {
+  line-height: 0 !important;
+  padding: 20px !important;
+}
+
+/* Ikoneiden tyylit */
+.icon {
+  width: 20px;
+}
+/* Border radius pois ikoneista */
+.listItem > img {
+  border-radius: 0 !important;
 }
