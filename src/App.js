@@ -75,24 +75,6 @@ class App extends React.Component {
         />
         <Switch>
           <Route
-            exact
-            path='/'
-            render={() => (
-              <div className={classes.homePage}>
-                <div className={classes.sideWrapper}>
-                  <SideBar admin={this.state.isAdmin} />
-                </div>
-                <div className={classes.contentWrapper}>
-                  <OrganizerTab />
-                  <GameTiles />
-                </div>
-                <div className={classes.chatWrapper}>
-                  <ChatBox />
-                </div>
-              </div>
-            )}
-          />
-          <Route
             path='/pelit'
             render={() => (
               <div className={classes.homePage}>
@@ -146,6 +128,24 @@ class App extends React.Component {
           <Route path='/kirjauduulos' render={() => <Logout />} />
           {/* TODO: Logout:sta Redirect kotisivulle */}
           {/* <Redirect to="/"></Redirect> */}
+          <Route
+            exact
+            path='/'
+            render={() => (
+              <div className={classes.homePage}>
+                <div className={classes.sideWrapper}>
+                  <SideBar admin={this.state.isAdmin} />
+                </div>
+                <div className={classes.contentWrapper}>
+                  <OrganizerTab />
+                  <GameTiles />
+                </div>
+                <div className={classes.chatWrapper}>
+                  <ChatBox />
+                </div>
+              </div>
+            )}
+          />
         </Switch>
       </div>
     );

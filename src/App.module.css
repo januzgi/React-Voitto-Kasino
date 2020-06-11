@@ -16,12 +16,12 @@
 /* Sisältöalueen wrapper */
 .contentWrapper {
   flex: 1 0 50%;
-  background-color: antiquewhite;
+  margin-left: 40px;
 }
 
 /* ChatBoxin wrapper */
 .chatWrapper {
-  margin-top: 40px;
+  margin-top: 20px;
   right: 0;
   flex-basis: 100%;
   display: flex;

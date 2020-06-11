@@ -2,12 +2,21 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { List, Image } from 'semantic-ui-react';
 import classes from './MainNav.module.css';
-
 import addBalanceIcon from '../../../ikonit/lisää.svg';
 
 // MainNav on oma komponenttinsa, sisältää NavBar:in päävalikon.
 // Kirjautuneen käyttäjän mukaan (admin/tavallinen) näytetään eri MainNav
 const MainNav = (props) => {
+  const onPaths = (paths) => {
+    return (match, location) => {
+      // Jos ollaan /pelit* alla
+      if (location.pathname.includes('/pelit')) {
+        return true;
+      }
+      return paths.includes(location.pathname);
+    };
+  };
+
   return (
     <div className={classes.mainNav}>
       {props.loggedIn && props.isAdmin ? (
@@ -17,6 +26,7 @@ const MainNav = (props) => {
             <NavLink
               exact={true}
               to='/'
+              isActive={onPaths('/')}
               activeClassName='active'
               className={classes.menuItem}
             >
@@ -49,6 +59,7 @@ const MainNav = (props) => {
             <NavLink
               exact={true}
               to='/'
+              isActive={onPaths('/')}
               activeClassName='active'
               className={classes.menuItem}
             >

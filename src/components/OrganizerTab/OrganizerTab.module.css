@@ -1,3 +1,45 @@
+/* Pääcontainer */
 .organizerTab {
-  color: #070d0d;
+  background: #5b2055;
+  box-shadow: 3px 3px 6px 0px #070d0d;
+  border-radius: 5px;
+  font-family: 'Prompt', sans-serif !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Otsikko */
+.organizerHeader > h1 {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Prompt', sans-serif !important;
+}
+/* Otsikon container */
+.organizerHeader {
+  padding: 20px;
+  flex: 1 1 100%;
+  text-align: center;
+}
+
+/* Kategorioiden container */
+.categoriesContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Yksittäinen kategoria */
+/* Perii active luokan HomeNav tai MainNav komponenteilta */
+.categoryItem {
+  flex: 1 1 25%;
+  text-align: center;
+  padding-bottom: 16px;
+  border-bottom: 4px solid #5b2055;
+}
+.activeItemDiv {
+  border-bottom: 4px solid #fb7963;
 }
