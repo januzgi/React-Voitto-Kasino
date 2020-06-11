@@ -1,6 +1,7 @@
 /* Koko palkki */
 .navBar {
   background: linear-gradient(90deg, #5b2055, #2f163b);
+  box-shadow: 3px 0px 6px 0px rgba(7, 13, 13, 0.3);
 }
 
 /* Logon fontti */

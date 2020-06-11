@@ -1,13 +1,52 @@
 .gameTile {
   flex: 1 1 30%;
-  height: 100%;
-  box-shadow: 3px 3px 6px 0px #070d0d;
+  height: 310px;
+  box-shadow: 3px 0px 6px 0px rgba(7, 13, 13, 0.3);
   border-radius: 5px;
   font-family: 'Prompt', sans-serif !important;
   margin-bottom: 20px;
+  color: #fefefe;
+  transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1) !important;
+  background-size: contain;
 }
-
+/* Keskimmäiset tiilet */
 .midTile {
   margin-left: 20px;
   margin-right: 20px;
+}
+/* Kun hoveraa pelin päällä */
+.gameTile:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
+
+/* Oletuksena tekstit ovat piilossa */
+.gameTileBackdrop {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1) !important;
+  padding-top: 20px;
+  text-align: center;
+}
+/* Tekstien tyylit */
+.gameTileBackdrop > h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+.gameTileBackdrop > h2 {
+  color: #fefefe !important;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0;
+  padding-bottom: 10px;
+}
+/* Backdrop tulee esiin kun pelin kortin päällä hoveraa */
+.gameTileBackdrop:hover {
+  background: rgba(7, 13, 13, 0.7);
+  opacity: 1;
 }

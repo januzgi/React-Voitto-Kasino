@@ -85,9 +85,7 @@ class App extends React.Component {
                   <OrganizerTab />
                   <GameTiles />
                 </div>
-                <div className={classes.chatWrapper}>
-                  <ChatBox />
-                </div>
+                <ChatBox />
               </div>
             )}
           />
@@ -140,9 +138,7 @@ class App extends React.Component {
                   <OrganizerTab />
                   <GameTiles />
                 </div>
-                <div className={classes.chatWrapper}>
-                  <ChatBox />
-                </div>
+                <ChatBox />
               </div>
             )}
           />

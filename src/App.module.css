@@ -4,8 +4,8 @@
   margin: 40px auto 0 auto;
   width: 97%;
   max-width: 1200px;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 /* Sivupalkin wrapper vasemmalla */
@@ -17,14 +17,4 @@
 .contentWrapper {
   flex: 1 0 50%;
   margin-left: 40px;
-}
-
-/* ChatBoxin wrapper */
-.chatWrapper {
-  margin-top: 20px;
-  right: 0;
-  flex-basis: 100%;
-  display: flex;
-  background-color: burlywood;
-  height: 60px;
 }
