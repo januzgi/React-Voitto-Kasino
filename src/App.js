@@ -18,8 +18,8 @@ class App extends React.Component {
     this.state = {
       list: [],
       id: 100,
-      isAdmin: false,
-      loggedIn: true,
+      isAdmin: true,
+      loggedIn: false,
       balanceValue: 0.0,
       currency: '€',
     };
@@ -81,7 +81,7 @@ class App extends React.Component {
                 <div className={classes.sideWrapper}>
                   <SideBar admin={this.state.isAdmin} />
                 </div>
-                <div className={classes.contentWrapper}>
+                <div className={classes.contentWrapper}>                       
                   <OrganizerTab />
                   <GameTiles />
                 </div>
@@ -115,7 +115,7 @@ class App extends React.Component {
                     <SideBar admin={this.state.isAdmin} />
                   </div>
                   <div className={classes.contentWrapper}>
-                    <AdminPage />
+                    <AdminPage admin={this.state.isAdmin}/>
                   </div>
                 </div>
               ) : (
@@ -134,7 +134,7 @@ class App extends React.Component {
                 <div className={classes.sideWrapper}>
                   <SideBar admin={this.state.isAdmin} />
                 </div>
-                <div className={classes.contentWrapper}>
+                <div className={classes.contentWrapper}>    
                   <OrganizerTab />
                   <GameTiles />
                 </div>

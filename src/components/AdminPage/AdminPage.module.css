@@ -1,3 +1,12 @@
 .adminPage {
   color: #070d0d;
+  box-shadow: 3px 0px 6px 0px rgba(7, 13, 13, 0.3);
+  border-radius: 5px;
+  font-family: 'Prompt', sans-serif !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
+
