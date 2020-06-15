@@ -3,10 +3,58 @@ import classes from './AdminPage.module.css';
 import { Dropdown } from 'semantic-ui-react';
 import {Form,Button} from 'semantic-ui-react';
 
-const options = [
-  { key: 1, text: 'abc', value: 'abc' },
-  { key: 2, text: 'def', value: 'def' },
-  { key: 3, text: 'ghi', value: 'ghi' },
+const gameTypes = [
+  { key: 1, text: 'Hedelmäpelit', value: 'Hedelmäpelit' },
+  { key: 2, text: 'Uutuudet', value: 'Uutuudet' },
+  { key: 3, text: 'Jackpotit', value: 'Jackpotit' },
+  { key: 4, text: 'Pöytäpelit', value: 'Pöytäpelit' },
+]
+
+const currency = [
+  { key: 1, text: '€', value: '€' },
+  { key: 2, text: '£', value: '£' },
+  { key: 3, text: '$', value: '$' },
+  { key: 4, text: '¥', value: '¥' },
+]
+
+const winPercent = [
+  { key: 1, text: '10', value: '10' },
+  { key: 2, text: '20', value: '20' },
+  { key: 3, text: '30', value: '30' },
+  { key: 4, text: '40', value: '40' },
+  { key: 5, text: '50', value: '50' },
+]
+
+const maxWin = [
+  { key: 1, text: '100', value: '100' },
+  { key: 2, text: '200', value: '200' },
+  { key: 3, text: '300', value: '300' },
+  { key: 4, text: '400', value: '400' },
+  { key: 5, text: '500', value: '500' },
+]
+
+const minWin = [
+  { key: 1, text: '10', value: '10' },
+  { key: 2, text: '20', value: '20' },
+  { key: 3, text: '30', value: '30' },
+  { key: 4, text: '40', value: '40' },
+  { key: 5, text: '50', value: '50' },
+]
+
+const maxStake = [
+  { key: 1, text: '100', value: '100' },
+  { key: 2, text: '200', value: '200' },
+  { key: 3, text: '300', value: '300' },
+  { key: 4, text: '400', value: '400' },
+  { key: 5, text: '500', value: '500' },
+]
+
+const minStake = [
+  { key: 1, text: '10', value: '10' },
+  { key: 2, text: '20', value: '20' },
+  { key: 3, text: '30', value: '30' },
+  { key: 4, text: '40', value: '40' },
+  { key: 5, text: '50', value: '50' },
 ]
 
 export default class AdminPage extends React.Component {
@@ -16,7 +64,13 @@ export default class AdminPage extends React.Component {
       type: '',
       count: 0,
       price: 0,
-      options: "",
+      gameTypes: "",
+      currency: "",
+      winPercent: "",
+      maxWin: "",
+      minWin: "",
+      maxStake: "",
+      minStake: "",
     };
   }
 
@@ -32,14 +86,26 @@ export default class AdminPage extends React.Component {
       type: this.state.type,
       count: this.state.count,
       price: this.state.price,
-      options: this.state.options,
+      gameTypes: this.state.gameTypes,
+      currency: this.state.currency,
+      winPercent: this.state.winPercent,
+      maxWin: this.state.maxWin,
+      minWin: this.state.minWin,
+      maxStake: this.state.maxStake,
+      minStake: this.state.minStake,
     };
     this.props.addToList(item);
     this.setState({
       type: '',
       count: 0,
       price: 0,
-      options: "",
+      gameTypes: "",
+      currency: "",
+      winPercent: "",
+      maxWin: "",
+      minWin: "",
+      maxStake: "",
+      minStake: "",
     });
   };
 
@@ -47,34 +113,121 @@ export default class AdminPage extends React.Component {
 		return(
         <form>
           <div className={classes.adminPage}>
-            <h1 style={{ color: "darkblue", fontSize: "" }}>
-              Search below to find facilities in your area.
-            </h1>
-            <div style={{ marginTop: "20px" }} className="ui big icon input">
-              <Dropdown
-                style={{ width: "150px" }}
-                search
-                onSearchChange={this.handleDropdownChange}
-                name="options"
-                selection
-                wrapSelection={false}
-                onChange={this.handleDropdownChange}
-                options={options}
-                placeholder="abc"
-              />
+            <div className={classes.adminGameRow}>
+
+            <div className={classes.adminGameRow}>
               <input
-                style={{ marginLeft: "10px", width: "100px" }}
+                style={{ marginLeft: "10px", width: "200px" }}
                 type="text"
-                placeholder="57115"
-                name="zipCode"
+                placeholder="Pelin nimi"
+                name="gameName"
                 onChange={this.handleChange}
               />
-              <button
-                style={{ marginLeft: "10px", width: "150px" }}
-                className="ui facebook button"
-              >
-                Search
-              </button>
+            </div>
+            <div className={classes.adminGameRow}></div>
+              <div style={{ marginTop: "20px" }} className="ui big icon input">
+                <Dropdown
+                  style={{ width: "100px" }}
+                  search
+                  onSearchChange={this.handleDropdownChange}
+                  name="gameTypes"
+                  selection
+                  wrapSelection={false}
+                  onChange={this.handleDropdownChange}
+                  options={gameTypes}
+                  placeholder="Pelin tyyppi"
+                />
+               </div>
+              <div style={{ marginTop: "20px" }} className="ui big icon input">
+                <Dropdown
+                  style={{ width: "100px" }}
+                  search
+                  onSearchChange={this.handleDropdownChange}
+                  name="currency"
+                  selection
+                  wrapSelection={false}
+                  onChange={this.handleDropdownChange}
+                  options={currency}
+                  placeholder="Rahayksikkö"
+                />
+              </div>
+            </div>
+            <div className={classes.adminGameRow}>
+              <div style={{ marginTop: "20px" }} className="ui small icon input">
+                <Dropdown
+                  style={{ width: "100px" }}
+                  search
+                  onSearchChange={this.handleDropdownChange}
+                  name="winPercent"
+                  selection
+                  wrapSelection={false}
+                  onChange={this.handleDropdownChange}
+                  options={winPercent}
+                  placeholder="Palatus %"
+                />
+              </div>
+              <div style={{ marginTop: "20px" }} className="ui small icon input">
+                <Dropdown
+                  style={{ width: "100px" }}
+                  search
+                  onSearchChange={this.handleDropdownChange}
+                  name="maxWin"
+                  selection
+                  wrapSelection={false}
+                  onChange={this.handleDropdownChange}
+                  options={maxWin}
+                  placeholder="Max voitto"
+                />
+              </div>
+              <div style={{ marginTop: "20px" }} className="ui small icon input">
+                <Dropdown
+                  style={{ width: "100px" }}
+                  search
+                  onSearchChange={this.handleDropdownChange}
+                  name="minWin"
+                  selection
+                  wrapSelection={false}
+                  onChange={this.handleDropdownChange}
+                  options={minWin}
+                  placeholder="Min voitto"
+                />
+              </div>
+            </div>
+            <div className={classes.adminGameRow}>
+              <div style={{ marginTop: "20px" }} className="ui small icon input">
+                <Dropdown
+                  style={{ width: "100px" }}
+                  search
+                  onSearchChange={this.handleDropdownChange}
+                  name="maxStake"
+                  selection
+                  wrapSelection={false}
+                  onChange={this.handleDropdownChange}
+                  options={maxStake}
+                  placeholder="Max panos"
+                />
+              </div>
+              <div style={{ marginTop: "20px" }} className="ui small icon input">
+                <Dropdown
+                  style={{ width: "100px" }}
+                  search
+                  onSearchChange={this.handleDropdownChange}
+                  name="minStake"
+                  selection
+                  wrapSelection={false}
+                  onChange={this.handleDropdownChange}
+                  options={minStake}
+                  placeholder="Min Panos"
+                />
+              </div>
+            </div>
+            <div className={classes.adminGameRow}>
+              <div style={{ marginTop: "20px" }}>
+                <Button 
+                  color="green"
+                  style={{ width: "100px" }}
+                  onClick={this.editItem}>Lisää peli</Button>
+              </div>
             </div>
           </div>
         </form>
