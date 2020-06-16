@@ -47,12 +47,10 @@
 /* Hakukentän ikonin hover */
 .inputImg:hover {
   cursor: pointer;
-  transition: opacity 0.3s, transform 0.3s;
   transform: scale(1.05);
 }
 
 /* Hakukentän ikonia painettaessa */
 .inputImg:active {
-  transition: opacity 0.3s, transform 0.3s;
   transform: scale(1);
 }

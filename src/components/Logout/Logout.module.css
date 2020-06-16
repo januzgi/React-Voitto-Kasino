@@ -1,4 +1,21 @@
 .logout {
   color: #070d0d;
   font-size: 30px;
+  width: 50%;
+  text-align: center;
+  box-shadow: 3px 0px 6px 0px rgba(7, 13, 13, 0.3);
+  border-radius: 5px;
+  padding: 20px;
+  background: #fefefe;
+}
+
+.logoutButton {
+  width: 200px;
+  background: #fb7963 !important;
+  color: #fefefe !important;
+  transition: all 0.3s ease !important;
+}
+
+.logoutButton:hover {
+  transform: scale(1.05);
 }

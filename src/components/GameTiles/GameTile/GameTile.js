@@ -55,6 +55,12 @@ const GameTile = (props) => {
     valittuKategoria = 'Halvin panos';
   }
 
+  let numero = 92;
+  // Jos mikään kategoria ei ole valittuna, älä näytä numeroa
+  if (valittuKategoria === '') {
+    numero = '';
+  }
+
   return (
     <Fragment>
       {/* Onko kyseessä keskimmäinen tiili */}
@@ -66,7 +72,7 @@ const GameTile = (props) => {
           <div className={classes.gameTileBackdrop}>
             <h1>{props.gameName}</h1>
             <h2>{valittuKategoria}</h2>
-            <h1>92</h1>
+            <h1>{numero}</h1>
           </div>
         </div>
       ) : (
@@ -77,7 +83,7 @@ const GameTile = (props) => {
           <div className={classes.gameTileBackdrop}>
             <h1>{props.gameName}</h1>
             <h2>{valittuKategoria}</h2>
-            <h1>92</h1>
+            <h1>{numero}</h1>
           </div>
         </div>
       )}

@@ -9,7 +9,10 @@ export default class SideBar extends React.Component {
   render() {
     return (
       <div className={classes.sideBar}>
-        <HomeNav admin={this.props.admin}></HomeNav>
+        <HomeNav
+          admin={this.props.admin}
+          loggedIn={this.props.loggedIn}
+        ></HomeNav>
         {/* Onko kyseessä adminin vai tavallisen käyttäjän SideBar? */}
         {this.props.admin ? null : (
           <Fragment>

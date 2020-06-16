@@ -16,10 +16,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: [],
-      id: 100,
+      users: [],
       isAdmin: false,
-      loggedIn: true,
+      loggedIn: false,
       balanceValue: 0.0,
       currency: '€',
     };
@@ -63,6 +62,32 @@ class App extends React.Component {
     this.props.history.push('/saldo');
   };
 
+  // Kirjaudu ulos
+  logOut = () => {
+    this.setState({
+      loggedIn: false,
+    });
+    // Ohjaa takaisin etusivulle
+    this.props.history.push('/');
+  };
+
+  createNewUser = (newUserData) => {
+    // Onko tämä ensimmäinen uusi käyttäjä
+    if (this.state.users.length === 0) {
+      // Ensimmäinen käyttäjä on admin
+      console.log(newUserData);
+      // let admin = []
+      // this.setState({
+      //   users:
+      // })
+    }
+
+    alert('Tervetuloa Kasinolle ' + newUserData.email + '!');
+
+    // Siirry etusivulle
+    this.props.history.push('/');
+  };
+
   render() {
     return (
       <div>
@@ -102,7 +127,12 @@ class App extends React.Component {
           />
           <Route
             path='/luotunnus'
-            render={() => <NewUser addToList={this.addToList} />}
+            render={() => (
+              <NewUser
+                addToList={this.addToList}
+                createNewUser={this.createNewUser}
+              />
+            )}
           />
           <Route path='/saldo' render={() => <Balance />} />
           <Route path='/kirjaudu' render={() => <Login />} />
@@ -112,10 +142,16 @@ class App extends React.Component {
               this.state.isAdmin ? (
                 <div className={classes.homePage}>
                   <div className={classes.sideWrapper}>
-                    <SideBar admin={this.state.isAdmin} />
+                    <SideBar
+                      admin={this.state.isAdmin}
+                      loggedIn={this.state.loggedIn}
+                    />
                   </div>
                   <div className={classes.contentWrapper}>
-                    <AdminPage />
+                    <AdminPage
+                      loggedIn={this.state.loggedIn}
+                      admin={this.state.isAdmin}
+                    />
                   </div>
                 </div>
               ) : (
@@ -123,7 +159,19 @@ class App extends React.Component {
               )
             }
           />
-          <Route path='/kirjauduulos' render={() => <Logout />} />
+          <Route
+            path='/kirjauduulos'
+            render={() =>
+              // Tarkista onko käyttäjä kirjautuneena sisään
+              this.state.loggedIn ? (
+                <div className={classes.homePage}>
+                  <Logout logout={() => this.logOut()} />
+                </div>
+              ) : (
+                <Redirect to='/' />
+              )
+            }
+          />
           {/* TODO: Logout:sta Redirect kotisivulle */}
           {/* <Redirect to="/"></Redirect> */}
           <Route
@@ -132,7 +180,10 @@ class App extends React.Component {
             render={() => (
               <div className={classes.homePage}>
                 <div className={classes.sideWrapper}>
-                  <SideBar admin={this.state.isAdmin} />
+                  <SideBar
+                    admin={this.state.isAdmin}
+                    loggedIn={this.state.loggedIn}
+                  />
                 </div>
                 <div className={classes.contentWrapper}>
                   <OrganizerTab />

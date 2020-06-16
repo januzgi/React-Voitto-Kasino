@@ -9,7 +9,7 @@ const HomeNav = (props) => {
   return (
     <div className={classes.homeNav}>
       {/* Onko kyseessä admin vai tavallinen käyttäjä */}
-      {props.admin ? (
+      {props.loggedIn && props.admin ? (
         <List selection verticalAlign='middle'>
           <List.Item className={classes.listItem}>
             <Image src={homePageIcon} className={classes.icon} />
