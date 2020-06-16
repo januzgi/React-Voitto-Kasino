@@ -113,21 +113,19 @@ export default class AdminPage extends React.Component {
 		return(
         <form>
           <div className={classes.adminPage}>
-            <div className={classes.adminGameRow}>
 
             <div className={classes.adminGameRow}>
               <input
-                style={{ marginLeft: "10px", width: "200px" }}
+                className={classes.adminPageInput}
                 type="text"
                 placeholder="Pelin nimi"
                 name="gameName"
                 onChange={this.handleChange}
               />
             </div>
-            <div className={classes.adminGameRow}></div>
-              <div style={{ marginTop: "20px" }} className="ui big icon input">
+            <div className={classes.adminGameRow}>
                 <Dropdown
-                  style={{ width: "100px" }}
+                  className={classes.adminPageDropWide}
                   search
                   onSearchChange={this.handleDropdownChange}
                   name="gameTypes"
@@ -137,10 +135,8 @@ export default class AdminPage extends React.Component {
                   options={gameTypes}
                   placeholder="Pelin tyyppi"
                 />
-               </div>
-              <div style={{ marginTop: "20px" }} className="ui big icon input">
                 <Dropdown
-                  style={{ width: "100px" }}
+                  className={classes.adminPageDropWide}
                   search
                   onSearchChange={this.handleDropdownChange}
                   name="currency"
@@ -150,12 +146,10 @@ export default class AdminPage extends React.Component {
                   options={currency}
                   placeholder="Rahayksikkö"
                 />
-              </div>
             </div>
             <div className={classes.adminGameRow}>
-              <div style={{ marginTop: "20px" }} className="ui small icon input">
                 <Dropdown
-                  style={{ width: "100px" }}
+                  className={classes.adminPageDrop}
                   search
                   onSearchChange={this.handleDropdownChange}
                   name="winPercent"
@@ -165,10 +159,8 @@ export default class AdminPage extends React.Component {
                   options={winPercent}
                   placeholder="Palatus %"
                 />
-              </div>
-              <div style={{ marginTop: "20px" }} className="ui small icon input">
                 <Dropdown
-                  style={{ width: "100px" }}
+                  className={classes.adminPageDrop}
                   search
                   onSearchChange={this.handleDropdownChange}
                   name="maxWin"
@@ -178,10 +170,8 @@ export default class AdminPage extends React.Component {
                   options={maxWin}
                   placeholder="Max voitto"
                 />
-              </div>
-              <div style={{ marginTop: "20px" }} className="ui small icon input">
                 <Dropdown
-                  style={{ width: "100px" }}
+                  className={classes.adminPageDrop}
                   search
                   onSearchChange={this.handleDropdownChange}
                   name="minWin"
@@ -191,12 +181,10 @@ export default class AdminPage extends React.Component {
                   options={minWin}
                   placeholder="Min voitto"
                 />
-              </div>
             </div>
             <div className={classes.adminGameRow}>
-              <div style={{ marginTop: "20px" }} className="ui small icon input">
                 <Dropdown
-                  style={{ width: "100px" }}
+                  className={classes.adminPageDrop}
                   search
                   onSearchChange={this.handleDropdownChange}
                   name="maxStake"
@@ -206,10 +194,8 @@ export default class AdminPage extends React.Component {
                   options={maxStake}
                   placeholder="Max panos"
                 />
-              </div>
-              <div style={{ marginTop: "20px" }} className="ui small icon input">
                 <Dropdown
-                  style={{ width: "100px" }}
+                  className={classes.adminPageDrop}
                   search
                   onSearchChange={this.handleDropdownChange}
                   name="minStake"
@@ -219,15 +205,13 @@ export default class AdminPage extends React.Component {
                   options={minStake}
                   placeholder="Min Panos"
                 />
-              </div>
             </div>
             <div className={classes.adminGameRow}>
-              <div style={{ marginTop: "20px" }}>
                 <Button 
+                  className={classes.adminPageButton}
                   color="green"
-                  style={{ width: "100px" }}
+                  style={{ marginLeft: "130px", marginTop: "20px", marginBottom: "20px"}}
                   onClick={this.editItem}>Lisää peli</Button>
-              </div>
             </div>
           </div>
         </form>
