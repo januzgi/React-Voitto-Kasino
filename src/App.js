@@ -17,8 +17,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       users: [],
-      isAdmin: false,
-      loggedIn: false,
+      isAdmin: true,
+      loggedIn: true,
       balanceValue: 0.0,
       currency: '€',
     };
@@ -65,6 +65,7 @@ class App extends React.Component {
   // Kirjaudu ulos
   logOut = () => {
     this.setState({
+      isAdmin: false,
       loggedIn: false,
     });
     // Ohjaa takaisin etusivulle
